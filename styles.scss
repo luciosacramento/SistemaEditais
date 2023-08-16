@@ -10,6 +10,10 @@
     color: $color-middle-grey;
   }
 
+  a{
+    text-decoration: none;
+  }
+
   .cont-input{
     display: block;
     flex-direction: column;
@@ -32,7 +36,7 @@
   }   
   
   
-  button {
+  button,.button {
     margin-top: 20px;
     padding: 10px;
     background-color: $color-red;
@@ -44,7 +48,7 @@
     transition: background-color 0.3s;
   }
   
-  button:hover {
+  button:hover,.button:hover {
     background-color: $color-amarelo;
     color: $color-middle-grey;
   }

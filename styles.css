@@ -10,6 +10,10 @@ body {
   color: #414141;
 }
 
+a {
+  text-decoration: none;
+}
+
 .cont-input {
   display: block;
   flex-direction: column;
@@ -31,7 +35,7 @@ body {
   border-radius: 3px;
 }
 
-button {
+button, .button {
   margin-top: 20px;
   padding: 10px;
   background-color: #93231A;
@@ -43,7 +47,7 @@ button {
   transition: background-color 0.3s;
 }
 
-button:hover {
+button:hover, .button:hover {
   background-color: #C8B372;
   color: #414141;
 }
