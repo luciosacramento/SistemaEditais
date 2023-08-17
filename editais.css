@@ -9,6 +9,26 @@ body {
   padding: 0 2.5%;
   margin: 0 auto;
 }
+.container table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.container table thead {
+  background-color: #C4CDD5;
+}
+.container table thead th {
+  padding: 10px;
+  font-weight: 400;
+}
+.container table tr td {
+  padding: 15px;
+}
+.container table tbody tr:nth-child(even) {
+  background-color: #f3f3f3;
+}
+.container table tbody tr:nth-child(odd) {
+  background-color: #fff;
+}
 
 header {
   margin: 40px auto;

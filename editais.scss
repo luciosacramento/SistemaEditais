@@ -9,6 +9,32 @@ body {
     max-width: 1141px;
     padding: 0 2.5%;
     margin: 0 auto;
+
+    table{
+        width: 100%;
+        border-collapse: collapse;
+        thead{
+            background-color: $color-light-grey;
+            th{
+                padding: 10px;
+                font-weight: 400;
+            }
+        }
+        tr td{
+            padding: 15px;
+        }
+        tbody{
+            tr {
+                 &:nth-child(even) {
+                 background-color: $color-ultra-light-grey;
+                 }
+     
+                 &:nth-child(odd) {
+                 background-color: #fff;
+                 }
+             }
+        } 
+    }
 }
 
 header{

@@ -36,7 +36,7 @@ a {
 }
 
 button, .button {
-  margin-top: 20px;
+  display: block;
   padding: 10px;
   background-color: #93231A;
   color: white;
