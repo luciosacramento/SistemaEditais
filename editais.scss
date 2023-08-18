@@ -6,7 +6,7 @@ body {
 
 .container {
     width: 95%;
-    max-width: 1141px;
+    max-width: $max-width-conteudo;
     padding: 0 2.5%;
     margin: 0 auto;
 
@@ -14,14 +14,15 @@ body {
         width: 100%;
         border-collapse: collapse;
         thead{
-            background-color: $color-light-grey;
+            background-color: $color-blue-grey;
             th{
-                padding: 10px;
+                padding: 15px 10px;
                 font-weight: 400;
             }
         }
         tr.linha td{
             padding: 15px;
+            text-align: center;
         }
         tbody{
             tr.linha{
@@ -103,5 +104,19 @@ header{
         font-size: 2.5rem;
         color: $color-amarelo;
         font-size: 32px;
+    }
+}
+
+.form-edit{
+    border: 1px solid $color-red;
+    padding: 25px;
+    background: url(imgs/seta-formulario.png) no-repeat 50% 0;
+    &::before{
+        content: '';
+        display: block;
+        width: 28px;
+        height: 35px;
+        background: url(imgs/icon-edit-red.png) no-repeat;
+        margin: -17px;
     }
 }

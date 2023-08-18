@@ -1,4 +1,11 @@
   @import 'variablesFunctions';
+  // Mixin
+  @mixin basic-column() {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: $max-width-conteudo;
+    margin: 0 auto;
+  }
 
   html {
     height: 100%;
@@ -26,12 +33,17 @@
         padding: 0 6px;
         font-size: 13px;;
     }
-    input {
-     width: calc(100% - 32px);
+    input,select {
+      width: calc(100% - 32px);
       padding: 15px;
       margin-top: 5px;
       border: 1px solid #ccc;
       border-radius: 3px;
+    }
+
+    select {
+      width: 100%;
+      padding: 14px;
     }
   }   
   
@@ -51,6 +63,97 @@
   button:hover,.button:hover {
     background-color: $color-amarelo;
     color: $color-middle-grey;
+  }
+
+  .cont_four_column {
+    @include basic-column();
+  
+    .item {
+      width: 25%;
+      padding: 10px;
+      box-sizing: border-box;
+
+      h2{
+        font-size: 16px;
+        margin-TOP: 20px;
+      }
+      .button{
+        margin-top: 10px;
+      }
+  
+      @media screen and (max-width: 768px) {
+        width: 50%; // 2 colunas em telas menores
+      }
+  
+      @media screen and (max-width: 480px) {
+        width: 100%; // 1 coluna em telas ainda menores
+      }
+    }
+  }
+
+  .cont_three_column {
+    @include basic-column();
+  
+    .item {
+      width: 33.33%;
+      padding: 10px;
+      box-sizing: border-box;
+    
+      @media screen and (max-width: 768px) {
+        width: 100%; // 1 coluna em telas ainda menores
+      }
+    }
+  }
+
+  .paginacao {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+  
+    button,.num-pagina {
+      border: none;
+      background-color: #f0f0f0;
+      color: #333;
+      font-size: 16px;
+      padding: 8px 12px;
+      cursor: pointer;
+  
+      &:hover {
+        background-color: #ddd;
+      }
+    }
+  
+    .num-pagina {
+      margin: 0 5px;
+      font-size: 18px;
+      font-weight: bold;
+      border: 1px solid $color-light-grey;
+      padding: 5px 12px;
+      border-radius: 5px;
+      background: transparent;
+    }
+
+    .num-pagina.actual{
+      border: 1px solid $color-amarelo;
+      color: $color-amarelo;
+    }
+  }
+
+  #bt-exportar-editais{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    float: right;
+    background: $color-amarelo;
+    color: $color-middle-grey;
+    &:hover{
+      background: $color-middle-grey;
+      color: $color-amarelo;
+    }
+    @media screen and (max-width: 768px) {
+      float: none;
+      margin: 20px auto;
+    }
   }
   
   

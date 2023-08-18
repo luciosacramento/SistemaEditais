@@ -14,14 +14,15 @@ body {
   border-collapse: collapse;
 }
 .container table thead {
-  background-color: #C4CDD5;
+  background-color: #E9E9E9;
 }
 .container table thead th {
-  padding: 10px;
+  padding: 15px 10px;
   font-weight: 400;
 }
 .container table tr.linha td {
   padding: 15px;
+  text-align: center;
 }
 .container table tbody tr.linha:nth-child(even) {
   background-color: #f3f3f3;
@@ -30,7 +31,7 @@ body {
   background-color: #fff;
 }
 .container table tbody tr.linha:hover {
-  background-color: #C8B372;
+  background-color: #F5B142;
   color: #414141;
 }
 
@@ -88,14 +89,28 @@ header nav ul li a {
 }
 .title hr {
   width: 100%;
-  background: #C8B372;
+  background: #F5B142;
   border: 0;
   height: 2px;
 }
 .title h1 {
   font-size: 2.5rem;
-  color: #C8B372;
+  color: #F5B142;
   font-size: 32px;
+}
+
+.form-edit {
+  border: 1px solid #93231A;
+  padding: 25px;
+  background: url(imgs/seta-formulario.png) no-repeat 50% 0;
+}
+.form-edit::before {
+  content: "";
+  display: block;
+  width: 28px;
+  height: 35px;
+  background: url(imgs/icon-edit-red.png) no-repeat;
+  margin: -17px;
 }
 
 /*# sourceMappingURL=editais.css.map */

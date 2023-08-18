@@ -25,6 +25,7 @@
             <a class="button" href="">Incluir novo edital</a>
         </div>
     </div>
+
     <table id="tb-editais">
         <thead>
             <tr>
@@ -71,11 +72,123 @@
             </tr>
         </tbody>
     </table>
+
+    <div class="cont_three_column">
+        <div class="item"></div>
+        <div class="item">
+            <div class="paginacao">
+                <button class="anterior">&#8249;</button>
+                <span class="num-pagina actual">1</span>
+                <span class="num-pagina">2</span>
+                <span class="num-pagina">3</span>
+                <span class="num-pagina">4</span>
+                <button class="próxima">&#8250;</button>
+            </div>
+        </div>
+        <div class="item">
+            <a id="bt-exportar-editais" href="" class="button">Exportar Editais</a>            
+        </div>
+    </div>
+
+   
     
   </div>
 </body>
 
 <script>
+
+    const form = `<form action="" class="form-edit">
+        <div class="cont_four_column">
+            <div class="item">
+                <div class="cont-input">
+                    <label for="doe">Número do DOE:</label>
+                    <input type="text"  name="doe" required>
+                </div>
+            </div>
+            <div class="item">
+                <div class="cont-input">
+                    <label for="cargo">Cargo:</label>
+                    <select name="cargo" required>
+                        <option value="">Selecione um cargo</option>
+                    </select>
+                </div>
+            </div>
+            <div class="item">
+                <div class="cont-input">
+                    <label for="tipo">Tipo:</label>
+                    <select name="tipo" required>
+                        <option value="">Selecione um tipo</option>
+                    </select>
+                </div>
+            </div>
+            <div class="item">
+                <div class="cont-input">
+                    <label for="criterio">Critério:</label>
+                    <select  name="criterio" required>
+                        <option value="">Selecione um critério</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="cont_four_column">
+            <div class="item">
+                <div class="cont-input">
+                    <label for="1_publicacao">Data da 1ª Publicação:</label>
+                    <input type="date" name="1_publicacao" id="">
+                </div>
+            </div>
+            <div class="item">
+                <div class="cont-input">
+                    <label for="2_publicacao">Data da 2ª Publicação:</label>
+                    <input type="date" name="2_publicacao" id="">
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="cont_four_column">
+            <div class="item">
+                <H2>
+                    Período de Inscrição:
+                </H2>
+            </div>
+            <div class="item">
+                <div class="cont-input">
+                    <label for="inicio">Início:</label>
+                    <input type="date" name="inicio" id="">
+                </div>
+            </div>
+            <div class="item">
+                <div class="cont-input">
+                    <label for="fim">Fim:</label>
+                    <input type="date" name="fim" id="">
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="cont_four_column ">
+            <div class="item">
+                <H2>
+                    Período de Cancelamento:
+                </H2>
+            </div>
+            <div class="item">
+                <div class="cont-input">
+                    <label for="inicio-cancelamento">Início:</label>
+                    <input type="date" name="inicio-cancelamento" id="">
+                </div>
+            </div>
+            <div class="item">
+                <div class="cont-input">
+                    <label for="fim-cancelamento">Fim:</label>
+                    <input type="date" name="fim-cancelamento" id="">
+                </div>
+            </div>
+            <div class="item">
+                <a href="" class="button">Salvar</a>
+            </div>
+        </div>
+        
+    </form>`;
 
 // Selecione a tabela pelo ID
 var minhaTabela = document.getElementById("tb-editais");
@@ -86,26 +199,35 @@ var num = 1;
 // Adicione um ouvinte de evento de clique a cada linha
 
 linhas.forEach(function(linha) {
-  linha.addEventListener("click", function() {
+
+    linha.setAttribute('index',num);  
+    linha.addEventListener("click", function() {
+
+    if(minhaTabela.querySelector(".linha-dinamica-"+this.getAttribute('index'))){
+        minhaTabela.querySelector(".linha-dinamica-"+this.getAttribute('index')).remove();
+        return;
+    }
     // Remova todas as linhas adicionadas dinamicamente
     var linhasDinamicas = minhaTabela.querySelectorAll(".linha-dinamica");
     linhasDinamicas.forEach(function(linhaDinamica) {
       linhaDinamica.remove();
     });
+    
 
     // Crie uma nova linha
     var novaLinha = document.createElement("tr");
     var novaCelula = document.createElement("td");
-    novaCelula.textContent = "Nova célula abaixo da linha clicada";
+    novaCelula.innerHTML = form;
     novaCelula.setAttribute("colspan", "6");
     novaLinha.appendChild(novaCelula);
     novaLinha.classList.add("linha-dinamica");
-    console.log(this);
-    novaLinha.classList.add("linha-dinamica-"+num);
-
+    novaLinha.classList.add("linha-dinamica-"+this.getAttribute('index'));
     // Insira a nova linha abaixo da linha clicada
     linha.parentNode.insertBefore(novaLinha, linha.nextSibling);
   });
+
+  num++;
+
 });
 
 </script>
