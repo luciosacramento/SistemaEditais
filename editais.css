@@ -20,14 +20,18 @@ body {
   padding: 10px;
   font-weight: 400;
 }
-.container table tr td {
+.container table tr.linha td {
   padding: 15px;
 }
-.container table tbody tr:nth-child(even) {
+.container table tbody tr.linha:nth-child(even) {
   background-color: #f3f3f3;
 }
-.container table tbody tr:nth-child(odd) {
+.container table tbody tr.linha:nth-child(odd) {
   background-color: #fff;
+}
+.container table tbody tr.linha:hover {
+  background-color: #C8B372;
+  color: #414141;
 }
 
 header {

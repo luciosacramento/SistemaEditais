@@ -25,7 +25,7 @@
             <a class="button" href="">Incluir novo edital</a>
         </div>
     </div>
-    <table>
+    <table id="tb-editais">
         <thead>
             <tr>
                 <th>DOE</th>
@@ -37,7 +37,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
+            <tr class="linha">
                 <td><a href="" class="button">01/2020</a></td>
                 <td>Analista Ministerial</td>
                 <td>Promoção</td>
@@ -45,12 +45,7 @@
                 <td>06/07/2012</td>
                 <td>07/07/2012</td>          
             </tr>
-            <tr>
-                <td colspan="6">
-                    
-                </td>
-            </tr>
-            <tr>
+            <tr class="linha">
                 <td><a href="" class="button">01/2020</a></td>
                 <td>Analista Ministerial</td>
                 <td>Promoção</td>
@@ -58,7 +53,7 @@
                 <td>06/07/2012</td>
                 <td>07/07/2012</td>          
             </tr>
-            <tr>
+            <tr class="linha">
                 <td><a href="" class="button">01/2020</a></td>
                 <td>Analista Ministerial</td>
                 <td>Promoção</td>
@@ -66,7 +61,7 @@
                 <td>06/07/2012</td>
                 <td>07/07/2012</td>          
             </tr>
-            <tr>
+            <tr class="linha">
                 <td><a href="" class="button">01/2020</a></td>
                 <td>Analista Ministerial</td>
                 <td>Promoção</td>
@@ -79,4 +74,39 @@
     
   </div>
 </body>
+
+<script>
+
+// Selecione a tabela pelo ID
+var minhaTabela = document.getElementById("tb-editais");
+
+// Selecione todas as linhas da tabela
+var linhas = minhaTabela.querySelectorAll("tr");
+var num = 1;
+// Adicione um ouvinte de evento de clique a cada linha
+
+linhas.forEach(function(linha) {
+  linha.addEventListener("click", function() {
+    // Remova todas as linhas adicionadas dinamicamente
+    var linhasDinamicas = minhaTabela.querySelectorAll(".linha-dinamica");
+    linhasDinamicas.forEach(function(linhaDinamica) {
+      linhaDinamica.remove();
+    });
+
+    // Crie uma nova linha
+    var novaLinha = document.createElement("tr");
+    var novaCelula = document.createElement("td");
+    novaCelula.textContent = "Nova célula abaixo da linha clicada";
+    novaCelula.setAttribute("colspan", "6");
+    novaLinha.appendChild(novaCelula);
+    novaLinha.classList.add("linha-dinamica");
+    console.log(this);
+    novaLinha.classList.add("linha-dinamica-"+num);
+
+    // Insira a nova linha abaixo da linha clicada
+    linha.parentNode.insertBefore(novaLinha, linha.nextSibling);
+  });
+});
+
+</script>
 </html>

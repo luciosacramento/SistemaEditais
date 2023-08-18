@@ -20,17 +20,21 @@ body {
                 font-weight: 400;
             }
         }
-        tr td{
+        tr.linha td{
             padding: 15px;
         }
         tbody{
-            tr {
+            tr.linha{
                  &:nth-child(even) {
                  background-color: $color-ultra-light-grey;
                  }
      
                  &:nth-child(odd) {
                  background-color: #fff;
+                 }
+                 &:hover{
+                        background-color: $color-amarelo;
+                        color: $color-middle-grey;
                  }
              }
         } 
