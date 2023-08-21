@@ -1,0 +1,55 @@
+@import 'variablesFunctions';
+
+.title{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    div:nth-child(1){
+        flex: 0 0 auto;
+        padding-right: 10px;
+    }
+    div:nth-child(2){
+        flex: 1 1 auto;
+    }
+
+    hr{
+        width: 100%;
+        background: $color-amarelo;
+        border: 0;
+        height: 2px;
+    }
+    h1{
+        font-size: 2.5rem;
+        color: $color-amarelo;
+        font-size: 32px;
+    }
+}
+
+.container {
+
+    table{
+
+        tbody{
+
+            tr{
+               border-bottom: 1px solid #fff;
+            }
+            
+            tr.disponivel{
+                background-color: $color-disponivel-inscricao !important;
+                color: $color-middle-grey;
+            }
+
+            tr.cancelamento{
+                background-color: $color-passivel-cancelamento !important;
+                color: #fff;
+
+                &:hover{
+                    color: #fff !important;
+                }
+            }
+        }
+
+    }
+}

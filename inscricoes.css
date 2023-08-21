@@ -12,10 +12,6 @@
 .title div:nth-child(2) {
   flex: 1 1 auto;
 }
-.title div:nth-child(3) {
-  flex: 0 0 auto;
-  padding-left: 10px;
-}
 .title hr {
   width: 100%;
   background: #F5B142;
@@ -28,18 +24,19 @@
   font-size: 32px;
 }
 
-.form-edit {
-  border: 1px solid #93231A;
-  padding: 25px;
-  background: url(imgs/seta-formulario.png) no-repeat 50% 0;
+.container table tbody tr {
+  border-bottom: 1px solid #fff;
 }
-.form-edit::before {
-  content: "";
-  display: block;
-  width: 28px;
-  height: 35px;
-  background: url(imgs/icon-edit-red.png) no-repeat;
-  margin: -17px;
+.container table tbody tr.disponivel {
+  background-color: #C8DAC4 !important;
+  color: #414141;
+}
+.container table tbody tr.cancelamento {
+  background-color: #BB2525 !important;
+  color: #fff;
+}
+.container table tbody tr.cancelamento:hover {
+  color: #fff !important;
 }
 
-/*# sourceMappingURL=editais.css.map */
+/*# sourceMappingURL=inscricoes.css.map */

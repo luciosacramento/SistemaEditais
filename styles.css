@@ -8,6 +8,7 @@ body {
   padding: 0;
   font-family: "Roboto", sans-serif;
   color: #414141;
+  height: 100%;
 }
 
 a {
@@ -149,6 +150,78 @@ button:hover, .button:hover {
     float: none;
     margin: 20px auto;
   }
+}
+
+.container {
+  width: 95%;
+  max-width: 1141px;
+  padding: 0 2.5%;
+  margin: 0 auto;
+}
+.container table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.container table thead {
+  background-color: #E9E9E9;
+}
+.container table thead th {
+  padding: 15px 10px;
+  font-weight: 400;
+}
+.container table tr.linha td {
+  padding: 15px;
+  text-align: center;
+}
+.container table tbody tr.linha:nth-child(even) {
+  background-color: #f3f3f3;
+}
+.container table tbody tr.linha:nth-child(odd) {
+  background-color: #fff;
+}
+.container table tbody tr.linha:hover {
+  background-color: #F5B142;
+  color: #414141;
+}
+
+header {
+  margin: 40px auto;
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  align-items: center;
+}
+header nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  background: #93231A;
+}
+header nav ul li {
+  margin: 0 10px;
+  list-style: none;
+  padding: 7px 5px;
+}
+header nav ul li:hover {
+  color: #93231A;
+  background: url(imgs/seta-menu.png) no-repeat 50% 110%;
+}
+header nav ul li.active {
+  color: #93231A;
+  background: url(imgs/seta-menu.png) no-repeat 50% 110%;
+}
+header nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.2rem;
+}
+
+.subtitle {
+  margin: 40px auto;
+  text-align: center;
 }
 
 /*# sourceMappingURL=styles.css.map */

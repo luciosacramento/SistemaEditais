@@ -15,6 +15,7 @@
     padding: 0;
     font-family: 'Roboto', sans-serif;
     color: $color-middle-grey;
+    height: 100%;
   }
 
   a{
@@ -155,6 +156,84 @@
       margin: 20px auto;
     }
   }
-  
+
+.container {
+    width: 95%;
+    max-width: $max-width-conteudo;
+    padding: 0 2.5%;
+    margin: 0 auto;
+
+    table{
+        width: 100%;
+        border-collapse: collapse;
+        thead{
+            background-color: $color-blue-grey;
+            th{
+                padding: 15px 10px;
+                font-weight: 400;
+            }
+        }
+        tr.linha td{
+            padding: 15px;
+            text-align: center;
+        }
+        tbody{
+            tr.linha{
+                 &:nth-child(even) {
+                 background-color: $color-ultra-light-grey;
+                 }
+     
+                 &:nth-child(odd) {
+                 background-color: #fff;
+                 }
+                 &:hover{
+                        background-color: $color-amarelo;
+                        color: $color-middle-grey;
+                 }
+             }
+        } 
+    }
+}
+
+header{
+    margin:  40px auto;
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    align-items: center;
+    nav ul{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0;
+        margin: 0;
+        background: $color-red;
+        li{
+            margin: 0 10px;
+            list-style: none;
+            padding: 7px 5px;
+            &:hover{
+                color: $color-red;
+                background: url(imgs/seta-menu.png) no-repeat 50% 110%;
+            }
+            &.active{
+                color: $color-red;
+                background: url(imgs/seta-menu.png) no-repeat 50% 110%;
+            }
+            a{
+                text-decoration: none;
+                color: #fff;
+                font-size: 1.2rem;
+               
+            }
+        }
+    }
+}
+
+.subtitle{
+  margin: 40px auto;
+  text-align: center;
+}
   
   
