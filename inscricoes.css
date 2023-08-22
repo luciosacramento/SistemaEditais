@@ -39,4 +39,28 @@
   color: #fff !important;
 }
 
+.list-legenda {
+  display: flex;
+  justify-content: flex-end;
+}
+.list-legenda li {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+.list-legenda li.disponivel::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  margin: 0 5px 0 20px;
+  background: #C8DAC4;
+}
+.list-legenda li.cancelamento::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  margin: 0 5px 0 10px;
+  background: #BB2525;
+}
+
 /*# sourceMappingURL=inscricoes.css.map */
